@@ -1,13 +1,10 @@
 import css from "./VoteStats.module.css";
+import { Votes } from "../../types/votes"; // ← Головне виправлення
 
 interface VoteStatsProps {
-  votes: {
-    good: number;
-    neutral: number;
-    bad: number;
-  };
+  votes: Votes; // ← використовуємо імпортований тип
   totalVotes: number;
-  positiveRate: number;
+  positiveRate: number; // ← ти використовуєш positiveRate
 }
 
 const VoteStats = ({ votes, totalVotes, positiveRate }: VoteStatsProps) => {
@@ -32,4 +29,4 @@ const VoteStats = ({ votes, totalVotes, positiveRate }: VoteStatsProps) => {
   );
 };
 
-export default VoteStats; // ← Має бути
+export default VoteStats;
