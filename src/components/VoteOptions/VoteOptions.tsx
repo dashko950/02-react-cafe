@@ -1,7 +1,8 @@
 import css from "./VoteOptions.module.css";
+import { VoteType } from "../../types"; // ← Це головне, що треба додати
 
 interface VoteOptionsProps {
-  onVote: (type: "good" | "neutral" | "bad") => void;
+  onVote: (type: VoteType) => void; // ← використовуємо імпортований тип
   onReset: () => void;
   canReset: boolean;
 }
@@ -18,6 +19,7 @@ const VoteOptions = ({ onVote, onReset, canReset }: VoteOptionsProps) => {
       <button className={css.button} onClick={() => onVote("bad")}>
         Bad
       </button>
+
       {canReset && (
         <button className={`${css.button} ${css.reset}`} onClick={onReset}>
           Reset
@@ -27,4 +29,4 @@ const VoteOptions = ({ onVote, onReset, canReset }: VoteOptionsProps) => {
   );
 };
 
-export default VoteOptions; // ← Має бути
+export default VoteOptions;
