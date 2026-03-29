@@ -1,5 +1,5 @@
 import css from "./VoteOptions.module.css";
-import { VoteType } from "../../types"; // ← Це головне, що треба додати
+import { VoteType } from "../../types/votes"; // ← Це головне, що треба додати
 
 interface VoteOptionsProps {
   onVote: (type: VoteType) => void; // ← використовуємо імпортований тип
